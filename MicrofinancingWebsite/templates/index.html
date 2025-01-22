@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microfinancing</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        header p {
+            font-size: 1.3rem;
+            margin-top: 1rem;
+        }
+        .welcome-message {
+            background: #007bff;
+            color: white;
+            padding: 2rem 1.5rem;
+            border-radius: 8px;
+            margin: 2rem auto;
+            max-width: 800px;
+            text-align: center;
+        }
+        .welcome-message h2 {
+            font-size: 2.5rem;
+        }
+        section {
+            margin: 2rem auto;
+            padding: 2rem;
+            max-width: 900px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .process-image img {
+            display: block;
+            max-width: 100%;
+            margin: 0 auto;
+            border-radius: 8px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        label {
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        input, select, button {
+            padding: 1rem;
+            font-size: 1.1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #28a745;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #f1f1f1;
+            margin-top: 2rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Microfinancing</h1>
+        <p>Your gateway to financial independence with easy loans!</p>
+    </header>
+
+    <div class="welcome-message">
+        <h2>Empowering you with our Microfinancing Platform</h2>
+        <p>We help you achieve your financial goals with hassle-free loan options.</p>
+    </div>
+
+    <section id="process">
+        <h2>How Microfinancing Works</h2>
+        <div class="process-image">
+            <img src="{{ url_for('static', filename='process-diagram.jpg') }}" alt="Microfinancing Process Diagram">
+        </div>
+    </section>
+
+    <section id="loan-form">
+        <h2>Apply for a Loan</h2>
+        <form action="/calculate" method="POST">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" name="firstName" required>
+
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" name="lastName" required>
+
+            <label for="reason">Reason for Loan:</label>
+            <input type="text" id="reason" name="reason" required>
+
+            <label for="amount">Loan Amount (₹):</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <label for="duration">Repayment Duration (years):</label>
+            <input type="number" id="duration" name="duration" required>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Microfinancing. All rights reserved.</p>
+    </footer>
+</body>
+</html>

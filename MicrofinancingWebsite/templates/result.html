@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculation Result</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: #0056b3;
+            color: white;
+            text-align: center;
+            padding: 3rem 1.5rem;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        section {
+            margin: 3rem auto;
+            padding: 3rem;
+            max-width: 900px;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            text-align: center;
+            font-size: 2rem;
+        }
+        .result-table {
+            margin-top: 2rem;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .result-table th, .result-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .result-table th {
+            background-color: #f1f1f1;
+            font-weight: bold;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background-color: #0056b3;
+            color: white;
+            text-align: center;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+        .back-button:hover {
+            background-color: #004085;
+        }
+        footer {
+            text-align: center;
+            padding: 1rem;
+            background: #f1f1f1;
+            margin-top: 2rem;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Loan Calculation Result</h1>
+    </header>
+
+    <section>
+        <h2>Thank you, {{ first_name }} {{ last_name }}</h2>
+        <table class="result-table">
+            <tr>
+                <th>Loan Amount (₹)</th>
+                <td>{{ amount }}</td>
+            </tr>
+            <tr>
+                <th>Repayment Duration (years)</th>
+                <td>{{ duration }}</td>
+            </tr>
+            <tr>
+                <th>Annual Interest Rate</th>
+                <td>22%</td>
+            </tr>
+            <tr>
+                <th>Total Repayment Amount (₹)</th>
+                <td>{{ total_amount | round(2) }}</td>
+            </tr>
+        </table>
+
+        <a href="/" class="back-button">Go Back to Home Page</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Microfinancing. All rights reserved.</p>
+    </footer>
+</body>
+</html>
