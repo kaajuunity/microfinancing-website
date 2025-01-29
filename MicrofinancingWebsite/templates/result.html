@@ -80,6 +80,14 @@
         <h2>Thank you, {{ first_name }} {{ last_name }}</h2>
         <table class="result-table">
             <tr>
+                <th>Age</th>
+                <td>{{ age }}</td>
+            </tr>
+            <tr>
+                <th>Profession</th>
+                <td>{{ profession }}</td>
+            </tr>
+            <tr>
                 <th>Loan Amount (₹)</th>
                 <td>{{ amount }}</td>
             </tr>
@@ -88,9 +96,14 @@
                 <td>{{ duration }}</td>
             </tr>
             <tr>
-                <th>Annual Interest Rate</th>
-                <td>22%</td>
+                <th>Loan Type</th>
+                <td>{{ loan_type }}</td>
             </tr>
+            <tr>
+                <th>Annual Interest Rate</th>
+                <td>{{ (interest_rate * 100) | round(2) }}%</td>
+            </tr>
+            
             <tr>
                 <th>Total Repayment Amount (₹)</th>
                 <td>{{ total_amount | round(2) }}</td>
@@ -101,7 +114,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2025 Microfinancing. All rights reserved.</p>
+        <p>&copy; 2025 Microfinancing. All rights reserved DOLLAR DYNASTY.</p>
     </footer>
 </body>
 </html>
